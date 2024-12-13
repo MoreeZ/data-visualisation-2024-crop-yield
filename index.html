@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Yield Visualisation</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/d3-array@1"></script>
+    <script src="https://unpkg.com/d3-collection@1"></script>
+    <script src="https://unpkg.com/d3-path@1"></script>
+    <script src="https://unpkg.com/d3-shape@1"></script>
+    <script src="https://unpkg.com/d3-sankey@0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="download-btn" onclick="downloadCanvas()">Download</button>
+    <div id="canvas">
+      <!-- Container for the visualization -->
+      <div class="left canvas-column">
+        <div class="maps" id="maps">
+          <div class="column yield-bg column-left">
+            <div class="chart" id="yield_map"></div>
+            <div class="chart filler-chart" id="yield_map2"></div>
+            <div class="column-content">
+              <h2 class="column-title yield-primary">Yield Per Hectare</h2>
+            </div>
+          </div>
+
+          <div class="column rain-bg column-right">
+            <div class="chart" id="rainfall_map"></div>
+            <div class="chart filler-chart" id="rainfall_map2"></div>
+            <div class="column-content">
+              <h2 class="column-title rain-primary">Average Rainfall</h2>
+            </div>
+          </div>
+
+          <div class="column pest-bg column-left">
+            <div class="chart" id="pesticides_map"></div>
+            <div class="chart filler-chart" id="pesticides_map2"></div>
+            <div class="column-content">
+              <h2 class="column-title pest-primary">Annual Pesticides</h2>
+            </div>
+          </div>
+
+          <div class="column temp-bg column-right">
+            <div class="chart" id="temp_map"></div>
+            <div class="chart filler-chart" id="temp_map2"></div>
+            <div class="column-content">
+              <h2 class="column-title temp-primary">Average Temperature</h2>
+            </div>
+          </div>
+        </div>
+        <div id="pie-chart"></div>
+      </div>
+      <div class="right canvas-column">
+        <div class="canvas-right-column-div">
+          <div id="input-form">
+            <h3>Settings</h3>
+            <div class="settings-item" id="year-select">
+              <span>Year</span>
+            </div>
+            <div class="settings-item" id="country-select">
+              <span>Country</span>
+            </div>
+          </div>
+          <div id="line-chart"></div>
+        </div>
+        <div id="heatmap"></div>
+      </div>
+      <div class="bottom-container" id="spider-chart"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
